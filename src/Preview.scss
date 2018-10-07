@@ -9,12 +9,9 @@
 }
 
 .top-bar {
-  box-sizing: border-box;
   padding: 8px;
   background-color: #f6f8fa;
   border-bottom: 1px solid #d1d5da;
-
-  //   align-content: center;
   h3 {
     margin: 0;
     display: flex;
@@ -32,5 +29,12 @@
         margin-left: auto;
       }
     }
+  }
+}
+
+.body {
+  padding: 40px;
+  p {
+    margin: 0;
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Preview.scss';
-import { Icon } from 'Elements';
+// eslint-disable-next-line
+import { Icon } from "Elements";
 
 export default class Preview extends Component {
   render() {
@@ -14,7 +15,9 @@ export default class Preview extends Component {
               <Icon name="pencil" color="#586069" />
             </h3>
           </div>
-          <div className="body" />
+          <div className="body">
+            <p>Content here</p>
+          </div>
         </div>
       </div>
     );
