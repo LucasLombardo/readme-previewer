@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './Preview.scss';
 // eslint-disable-next-line
 import { Icon } from "Elements";
@@ -16,7 +17,7 @@ export default class Preview extends Component {
             </h3>
           </div>
           <div className="body">
-            <p>Content here</p>
+            <ReactMarkdown source={this.props.input} />,
           </div>
         </div>
       </div>
