@@ -76,6 +76,13 @@ export default class Icon extends Component {
             <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
           </svg>
         );
+      case 'strikethrough':
+        return (
+          <svg width="18" height="18" fill={color} viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 19h4v-3h-4v3zM5 4v3h5v3h4V7h5V4H5zM3 14h18v-2H3v2z" />
+          </svg>
+        );
       default:
         return <div />;
     }
