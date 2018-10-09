@@ -62,53 +62,35 @@ export default class Editor extends Component {
   }
 
   render() {
+    const { formatCode } = this;
+    const BUTTONS = [
+      ['H1', formatCode],
+      ['H2', formatCode],
+      ['H3', formatCode],
+      ['H4', formatCode],
+      ['H5', formatCode],
+      ['H6', formatCode],
+      ['bold', formatCode],
+      ['italic', formatCode],
+      ['quotes', formatCode],
+      ['code', formatCode],
+      ['hr', formatCode],
+      ['link', formatCode],
+      ['image', formatCode],
+    ];
     return (
       <div className="Editor">
         <div className="edit-box">
           <div className="controls">
-            <button type="button" className="edit-btn">
-              <h3>H1</h3>
-            </button>
-            <button type="button" className="edit-btn">
-              <h3>H2</h3>
-            </button>
-            <button type="button" className="edit-btn">
-              <h3>H3</h3>
-            </button>
-            <button type="button" className="edit-btn">
-              <h3>H4</h3>
-            </button>
-            <button type="button" className="edit-btn">
-              <h3>H5</h3>
-            </button>
-            <button type="button" className="edit-btn">
-              <h3>H6</h3>
-            </button>
-            <button type="button" className="edit-btn">
-              <Icon name="bold" />
-            </button>
-            <button type="button" className="edit-btn">
-              <Icon name="italic" />
-            </button>
-            <button type="button" className="edit-btn">
-              <Icon name="quotes" />
-            </button>
-            <button
-              type="button"
-              className="edit-btn"
-              onClick={this.formatCode}
-            >
-              <Icon name="code" />
-            </button>
-            <button type="button" className="edit-btn">
-              <Icon name="hr" />
-            </button>
-            <button type="button" className="edit-btn">
-              <Icon name="link" />
-            </button>
-            <button type="button" className="edit-btn">
-              <Icon name="image" />
-            </button>
+            {BUTTONS.map(btn => (
+              <button type="button" className="edit-btn" onClick={btn[1]}>
+                {btn[0][0] === 'H' ? (
+                  <h3>{btn[0]}</h3>
+                ) : (
+                  <Icon name={btn[0]} color="#d1d5da" />
+                )}
+              </button>
+            ))}
           </div>
           <textarea
             className="markdown-input"

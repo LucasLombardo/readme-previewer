@@ -17,16 +17,27 @@
       border-bottom: 1px solid #000;
       flex: 0 0 50px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: center;
       .edit-btn {
-        width: 40px;
-        height: 40px;
-        background-color: lighten(#282c34, 60%);
+        width: 36px;
+        height: 36px;
+        background-color: rgba(0, 0, 0, 0);
         border-radius: 6px;
-        border: 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #d1d5da;
+        margin: 2px;
+        cursor: pointer;
+        transition: 0.1s;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
         h3 {
           margin: 0;
+          font-size: 14px;
+        }
+        svg {
+          margin-top: 5px;
         }
       }
     }
@@ -58,11 +69,15 @@
         margin-right: 4px;
       }
       button {
-        border: 1px solid #d1d5da;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         background-color: rgba(0, 0, 0, 0);
         color: #d1d5da;
         border-radius: 3px;
         cursor: pointer;
+        transition: 0.1s;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
       }
     }
   }
