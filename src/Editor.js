@@ -3,6 +3,22 @@ import PropTypes from 'prop-types';
 import { Icon } from 'Elements';
 import './Editor.scss';
 
+function downloadReadme(text) {
+  const pom = document.createElement('a');
+  pom.setAttribute(
+    'href',
+    `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`,
+  );
+  pom.setAttribute('download', 'README.md');
+  if (document.createEvent) {
+    const event = document.createEvent('MouseEvents');
+    event.initEvent('click', true, true);
+    pom.dispatchEvent(event);
+  } else {
+    pom.click();
+  }
+}
+
 export default class Editor extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +27,10 @@ export default class Editor extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.formatCode = this.formatCode.bind(this);
 
-    this.myRef = React.createRef();
+    this.copyMarkdown = this.copyMarkdown.bind(this);
+    this.clearMarkdown = this.clearMarkdown.bind(this);
+
+    this.MainTextarea = React.createRef();
   }
 
   handleChange(event) {
@@ -21,7 +40,7 @@ export default class Editor extends Component {
 
   formatCode() {
     const { input } = this.state;
-    const markdownInput = this.myRef.current;
+    const markdownInput = this.MainTextarea.current;
     const selection = window.getSelection();
     const start = markdownInput.selectionStart;
     const end = markdownInput.selectionEnd;
@@ -30,6 +49,16 @@ export default class Editor extends Component {
     )}`;
     this.setState({ input: newInput });
     this.props.updateMarkdown(newInput);
+  }
+
+  clearMarkdown() {
+    this.setState({ input: '' });
+    this.props.updateMarkdown('');
+  }
+
+  copyMarkdown() {
+    this.MainTextarea.current.select();
+    document.execCommand('copy');
   }
 
   render() {
@@ -83,10 +112,24 @@ export default class Editor extends Component {
           </div>
           <textarea
             className="markdown-input"
-            ref={this.myRef}
+            ref={this.MainTextarea}
             value={this.state.input}
             onChange={this.handleChange}
           />
+          <div className="bottom-options">
+            <button type="button" onClick={this.clearMarkdown}>
+              clear
+            </button>
+            <button type="button" onClick={this.copyMarkdown}>
+              copy
+            </button>
+            <button
+              type="button"
+              onClick={() => downloadReadme(this.state.input)}
+            >
+              save
+            </button>
+          </div>
         </div>
       </div>
     );

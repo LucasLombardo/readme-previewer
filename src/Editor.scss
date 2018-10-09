@@ -46,5 +46,24 @@
         border: 1px solid #d1d5da;
       }
     }
+    .bottom-options {
+      flex: 0 0 22px;
+      display: flex;
+      justify-content: center;
+      margin: 0 4px;
+      padding: 4px 0;
+      background-color: #20232a;
+      button:nth-of-type(2) {
+        margin-left: auto;
+        margin-right: 4px;
+      }
+      button {
+        border: 1px solid #d1d5da;
+        background-color: rgba(0, 0, 0, 0);
+        color: #d1d5da;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    }
   }
 }
