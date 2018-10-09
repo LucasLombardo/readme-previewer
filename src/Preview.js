@@ -17,7 +17,7 @@ export default class Preview extends Component {
             </h3>
           </div>
           <div className="body">
-            <ReactMarkdown source={this.props.input} />,
+            <ReactMarkdown source={this.props.input} />
           </div>
         </div>
       </div>
