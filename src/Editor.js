@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Icon } from 'Elements';
 import './Editor.scss';
 
 export default class Editor extends Component {
@@ -36,8 +37,48 @@ export default class Editor extends Component {
       <div className="Editor">
         <div className="edit-box">
           <div className="controls">
-            <button type="button" onClick={this.formatCode}>
-              &lt;/&gt;
+            <button type="button" className="edit-btn">
+              <h3>H1</h3>
+            </button>
+            <button type="button" className="edit-btn">
+              <h3>H2</h3>
+            </button>
+            <button type="button" className="edit-btn">
+              <h3>H3</h3>
+            </button>
+            <button type="button" className="edit-btn">
+              <h3>H4</h3>
+            </button>
+            <button type="button" className="edit-btn">
+              <h3>H5</h3>
+            </button>
+            <button type="button" className="edit-btn">
+              <h3>H6</h3>
+            </button>
+            <button type="button" className="edit-btn">
+              <Icon name="bold" />
+            </button>
+            <button type="button" className="edit-btn">
+              <Icon name="italic" />
+            </button>
+            <button type="button" className="edit-btn">
+              <Icon name="quotes" />
+            </button>
+            <button
+              type="button"
+              className="edit-btn"
+              onClick={this.formatCode}
+            >
+              <Icon name="code" />
+            </button>
+            <button type="button" className="edit-btn">
+              <Icon name="hr" />
+            </button>
+            <button type="button" className="edit-btn">
+              <Icon name="link" />
+            </button>
+            <button type="button" className="edit-btn">
+              <Icon name="image" />
             </button>
           </div>
           <textarea
