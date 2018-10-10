@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
-import { Icon } from "Elements";
+import { Icon, readMe } from "Elements";
 import './Editor.scss';
 
 function downloadReadme(text) {
@@ -32,7 +32,7 @@ function findLineBreak(str, index) {
 export default class Editor extends Component {
   constructor(props) {
     super(props);
-    this.state = { input: '# This is a header\n\nAnd this is a paragraph' };
+    this.state = { input: readMe };
 
     this.handleChange = this.handleChange.bind(this);
     this.wrapText = this.wrapText.bind(this);
