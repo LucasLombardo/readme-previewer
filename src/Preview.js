@@ -8,7 +8,7 @@ export default class Preview extends Component {
   render() {
     return (
       <div className="Preview">
-        <div className="readme">
+        <div className="readme" id="preview">
           <div className="top-bar">
             <h3>
               <Icon name="book" color="#24292e" />

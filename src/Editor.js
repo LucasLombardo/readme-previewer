@@ -46,6 +46,8 @@ export default class Editor extends Component {
   }
 
   handleChange(event) {
+    console.log(this.state.input);
+    console.log(event.target.value);
     this.setState({ input: event.target.value });
     this.props.updateMarkdown(event.target.value);
   }
@@ -134,6 +136,7 @@ export default class Editor extends Component {
           </div>
           <textarea
             className="markdown-input"
+            id="editor"
             ref={this.MainTextarea}
             value={this.state.input}
             onChange={this.handleChange}
