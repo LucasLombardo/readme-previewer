@@ -23,7 +23,7 @@ function downloadReadme(text) {
 function findLineBreak(str, index) {
   // finds the index of the first linebreak to the left of index
   const leftStr = str.slice(0, index);
-  for (let i = leftStr.length; i > 0; i--) {
+  for (let i = leftStr.length; i > 0; i -= 1) {
     if (leftStr[i] === '\n') return i;
   }
   return 0;
@@ -46,8 +46,6 @@ export default class Editor extends Component {
   }
 
   handleChange(event) {
-    console.log(this.state.input);
-    console.log(event.target.value);
     this.setState({ input: event.target.value });
     this.props.updateMarkdown(event.target.value);
   }
