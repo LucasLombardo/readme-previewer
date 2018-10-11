@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
-import { Icon, readMe } from "Elements";
+import { Icon, readMe } from "Assets";
 import './Editor.scss';
 
 function downloadReadme(text) {

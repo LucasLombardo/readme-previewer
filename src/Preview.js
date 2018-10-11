@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './Preview.scss';
 // eslint-disable-next-line
-import { Icon } from "Elements";
+import { Icon } from "Assets";
 
 export default class Preview extends Component {
   render() {

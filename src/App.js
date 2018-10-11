@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { readMe } from 'Elements';
+// eslint-disable-next-line
+import { readMe } from "Assets";
 import Editor from './Editor';
 import Preview from './Preview';
 
